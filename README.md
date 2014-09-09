@@ -20,3 +20,8 @@ All of the building required is provided by the install.sh
 #### If you built with ./build
 
     docker run --link db:db -d -p 5000:5000 --name gatewayd_start gatewayd
+
+# TODO:
+
+ - refactor db data to separate storage container
+ - put all images (storage, db, app) in another container behind nginx
