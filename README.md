@@ -1,3 +1,5 @@
+Waiting on [pull request on Ripple/gatewayd](https://github.com/ripple/gatewayd/pull/269) for build. Otherwise I can point the image to my fork of Ripple/gatewayd
+
 # Install gatewayd with docker
 
 This project breaks up the gatewayd app into two docker containers:
@@ -12,6 +14,8 @@ This is the docker way, ship the different pieces of your app in different conta
 All of the building required is provided by the install.sh
 
     ./install
+
+Most docker installations require `sudo ./install`
 
 ## Run that gateway
 
