@@ -18,4 +18,6 @@ RUN cd /gatewayd && npm install
 ADD config.js /gatewayd/config/config.js
 ADD database.json /gatewayd/lib/data/database.json
 
+EXPOSE 5000
+
 CMD ["/gatewayd/bin/gateway", "start"]
