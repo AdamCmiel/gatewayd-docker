@@ -1,9 +1,8 @@
+# Pull CentOS
 FROM centos
 
+# Author for nagging
 MAINTAINER Adam Cmiel adamcmiel@gmail.com
-
-# Install EPEL6 for additional packages
-#RUN yum -y install http://mirror.pnl.gov/epel/6/i386/epel-release-6-8.noarch.rpm
 
 # Install Development Tools
 RUN yum clean all
