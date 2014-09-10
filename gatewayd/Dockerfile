@@ -15,7 +15,7 @@ RUN git clone https://github.com/ripple/gatewayd.git /gatewayd
 RUN cd /gatewayd && npm install
 
 # Add configuration files
-ADD config.js /gatewayd/config/config.js
+ADD config.json /gatewayd/config/config.json
 ADD database.json /gatewayd/lib/data/database.json
 
 EXPOSE 5000
