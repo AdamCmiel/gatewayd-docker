@@ -1,19 +1,19 @@
 #!/bin/bash
 
 # Create the database container
-docker pull adamcmiel/postgres:1.0.0
+docker pull adamcmiel/postgres
 
 # Start the database server
-docker run -d --name db adamcmiel/postgres:1.0.0
+docker run -d --name db adamcmiel/postgres
 
 # Create the database user
-docker run -it --link db:db adamcmiel/postgres:1.0.0 psql -h db -U postgres -c "create user gatewayd_user with password 'password'"
+docker run -it --link db:db adamcmiel/postgres psql -h db -U postgres -c "create user gatewayd_user with password 'password'"
 
 # Create the database to use
-docker run -it --link db:db adamcmiel/postgres:1.0.0 psql -h db -U postgres -c "create database gateway_db with owner gatewayd_user"
+docker run -it --link db:db adamcmiel/postgres psql -h db -U postgres -c "create database gateway_db with owner gatewayd_user"
 
 # Create the gatewayd container
-docker pull adamcmiel/gatewayd:1.1.0
+docker pull adamcmiel/gatewayd
 
 # Run the migration script
-docker run -it --link db:db adamcmiel/gatewayd:1.1.0 /bin/bash -c "cd /gatewayd && grunt migrate"
+docker run -it --link db:db adamcmiel/gatewayd /bin/bash -c "cd /gatewayd && grunt migrate"

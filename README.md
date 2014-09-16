@@ -21,7 +21,7 @@ Most docker installations require `sudo ./install`
 
 ## Run that gateway
 
-    docker run --link db:db -d -p 5000:5000 --name gatewayd_start adamcmiel/gatewayd:1.1.0
+    docker run --link db:db -d -p 5000:5000 --name gatewayd_start adamcmiel/gatewayd
 
 Now the webapp should be available on port 5000 of the running machine.
 If you are running Boot2Docker or another VM install, you'll need to map the VM port to the host OS port.
