@@ -14,14 +14,12 @@ RUN npm install --global pg pm2 grunt grunt-cli forever db-migrate jshint
 ADD gatewayd /gatewayd
 RUN cd /gatewayd && npm install
 
-RUN apt-get -y install vim
-
 # Add configuration files
 ADD config.json /gatewayd/config/config.json
 ADD database.json /gatewayd/lib/data/database.json
 ADD supervisor.conf /gatewayd/config/supervisor.conf
 
+# Expose running port
 EXPOSE 5000
 
-# CMD ["/bin/bash", "-c", "supervisord", "-n", "-c", "'/gatewayd/config/supervisor.conf'"]
 CMD ["supervisord", "-n", "-c", "/gatewayd/config/supervisor.conf"]

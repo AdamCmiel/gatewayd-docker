@@ -13,7 +13,7 @@ docker run -it --link db:db adamcmiel/postgres:1.0.0 psql -h db -U postgres -c "
 docker run -it --link db:db adamcmiel/postgres:1.0.0 psql -h db -U postgres -c "create database gateway_db with owner gatewayd_user"
 
 # Create the gatewayd container
-docker pull adamcmiel/gatewayd:1.0.0
+docker pull adamcmiel/gatewayd:1.1.0
 
 # Run the migration script
-docker run -it --link db:db adamcmiel/gatewayd:1.0.0 /bin/bash -c "cd /gatewayd && grunt migrate"
+docker run -it --link db:db adamcmiel/gatewayd:1.1.0 /bin/bash -c "cd /gatewayd && grunt migrate"
