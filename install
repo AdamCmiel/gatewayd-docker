@@ -12,8 +12,12 @@ docker run -it --link db:db adamcmiel/postgres psql -h db -U postgres -c "create
 # Create the database to use
 docker run -it --link db:db adamcmiel/postgres psql -h db -U postgres -c "create database gateway_db with owner gatewayd_user"
 
+# Run the ripple-rest container
+docker pull adamcmiel/ripple-rest
+docker run -d --name rr adamciel/ripple-rest
+
 # Create the gatewayd container
 docker pull adamcmiel/gatewayd
 
 # Run the migration script
-docker run -it --link db:db adamcmiel/gatewayd /bin/bash -c "cd /gatewayd && grunt migrate"
+docker run -it --link db:db --link rr:rr adamcmiel/gatewayd /bin/bash -c "cd /gatewayd && grunt migrate"

@@ -1,5 +1,5 @@
 {
-  "RIPPLE_REST_API": "http://0.0.0.0:5990/",
+  "RIPPLE_REST_API": "http://rr:5990/",
   "DATABASE_URL": "postgres://gatewayd_user:password@db:5432/gateway_db",
   "SSL": false,
   "HOST": "0.0.0.0"
