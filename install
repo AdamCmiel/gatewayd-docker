@@ -17,3 +17,4 @@ docker pull adamcmiel/gatewayd
 
 # Run the migration script
 docker run -it --link db:db adamcmiel/gatewayd /bin/bash -c "cd /gatewayd && grunt migrate"
+

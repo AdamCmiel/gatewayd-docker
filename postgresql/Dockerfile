@@ -28,3 +28,4 @@ EXPOSE 5432
 
 # start the database
 CMD su - postgres -c '/usr/pgsql-9.3/bin/postgres -D /var/lib/pgsql/data'
+

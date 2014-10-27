@@ -17,3 +17,4 @@ docker build -t gatewayd ./gatewayd
 
 # Run the migration script
 docker run -it --link db:db gatewayd /bin/bash -c "cd /gatewayd && grunt migrate"
+

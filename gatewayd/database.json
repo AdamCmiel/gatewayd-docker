@@ -9,3 +9,4 @@
     "ENV": "postgres://gatewayd_user:password@db:5432/gateway_db"
   }
 }
+

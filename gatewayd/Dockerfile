@@ -23,3 +23,4 @@ ADD supervisor.conf /gatewayd/config/supervisor.conf
 EXPOSE 5000
 
 CMD ["supervisord", "-n", "-c", "/gatewayd/config/supervisor.conf"]
+
