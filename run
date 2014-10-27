@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Run the gatewayd box
+docker run --link db:db -d -p 5000:5000 --name gatewayd_start adamcmiel/gatewayd

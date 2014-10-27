@@ -12,12 +12,6 @@ docker run -it --link db:db gatewayd_db psql -h db -U postgres -c "create user g
 # Create the database to use
 docker run -it --link db:db gatewayd_db psql -h db -U postgres -c "create database gateway_db with owner gatewayd_user"
 
-# Create the ripple-rest container
-docker build -t gatewayd_ripple_rest ./ripple-rest
-
-# Run the ripple-rest container
-docker run -d --name rr gatewayd_ripple_rest
-
 # Create the gatewayd container
 docker build -t gatewayd ./gatewayd
 
